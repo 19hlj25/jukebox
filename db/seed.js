@@ -34,4 +34,4 @@ async function seed() {
       tracks[i].id
     );
   }
-}
+};

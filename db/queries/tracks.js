@@ -1,6 +1,14 @@
 import db from "#db/client";
 
 
+export async function getTracks(){
+    const sql = `
+    SELECT * FROM tracks;`;
+    const { rows } = await db.query(sql);
+    return rows;
+};
+
+
 export async function createTrack(name, duration_ms) {
   const sql = `
     INSERT INTO tracks (name, duration_ms)
@@ -10,5 +18,13 @@ export async function createTrack(name, duration_ms) {
 
   const { rows: [track] } = await db.query(sql, [name, duration_ms]);
   return track;
-}
+};
 
+export async function getTrackById(id) {
+    const sql =
+    `SELECT * FROM tracks
+    WHERE id = $1;`;
+
+    const { rows:  [track] } = await db.query(sql, [id]);
+    return track;
+};
