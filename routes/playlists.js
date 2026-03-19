@@ -6,7 +6,7 @@ import {
   getTracksByPlaylistId
 } from "#db/queries/playlists";
 import { addTrackToPlaylist } from "#db/queries/playlists_tracks";
-import { getTrackById } from "db/queries/tracks";
+import { getTrackById } from "#db/queries/tracks";
 
 const router = express.Router();
 

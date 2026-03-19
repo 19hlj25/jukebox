@@ -82,6 +82,7 @@ describe("/playlists router", () => {
         name: "New Playlist",
         description: "New Playlist Description",
       });
+      
       expect(response.status).toBe(201);
       const playlist = response.body;
       expect(playlist).toEqual(expectedPlaylist);
